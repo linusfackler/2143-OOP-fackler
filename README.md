@@ -1,6 +1,7 @@
 # 2143-OOP-fackler
 
-Linus Fackler\n
+Linus Fackler
+
 linus.fackler@iCloud.com
 
 <img src="profile.jpg" width="100">
