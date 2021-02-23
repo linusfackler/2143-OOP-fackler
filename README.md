@@ -1,7 +1,5 @@
-# 2143-OOP-fackler
-
-Linus Fackler
-
-linus.fackler@iCloud.com
-
-<img src="profile.jpg" width="100">
+## Linus Fackler
+#### Repo: 2143 Object Oriented Repo
+#### Email: linus.fackler@iCloud.com
+#### Image:
+<img src="profile.jpg" width="200">
