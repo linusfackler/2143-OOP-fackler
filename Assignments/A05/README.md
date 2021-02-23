@@ -19,13 +19,16 @@
 
 #### Class
 
-> This is your definition of what a class is. Using images is A-ok. For example: 
+> A user-defined data type holding data members and functions for those memebers.
+> "Cars" is a class that has lots of different objects. Like different car models who contain properties like
+> their number oh hp, speed limit, or gas milage.
 >
 ><img src="https://ds055uzetaobb.cloudfront.net/image_optimizer/722c82aff075a14313be7fa7463f7fedad151a0a.png" width=250>
 
 #### Class Variable
 
->
+> A class variable defines a specific attribute for a class. Other than an instance variable, it only has one copy of the variable
+> and therefore only hold one variable.
 
 #### Composition
 
