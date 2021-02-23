@@ -10,6 +10,7 @@
 
 > The concept of hiding unnecessary details from the user to make it as user-friendly as possible.
 > The user doesn't need to see how a machine works. He just needs to know which buttons to press, not what they actually execute.
+> 
 > <img src="https://www.onlinebuff.com/artimages/php46-abs.jpg" width=250>
 
 #### Attributes / Properties
