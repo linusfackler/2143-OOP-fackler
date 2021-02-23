@@ -1,31 +1,3 @@
-///////////////////////////////////////////////////////////////////////////////
-//                   
-// Author:           Terry Griffin
-// Email:            terry.griffin@msutexas.edu
-// Label:            A04
-// Title:            Linked List Class
-// Course:           CMPS 3013
-// Semester:         Spring 2020
-//
-// Description:
-//       This program implements a class that allows a linked list to be used just like 
-//       an array. It overloads the "[]" (square brackets) to simulate accessing seperate 
-//       array elements, but really it traverses the list to find the specified node using
-//       an index value. It also overloads the "+" and "-" signs allowing a user to "add"
-//       or "push" items onto the end of the list, as well as "pop" items off the end of our 
-//       array. This class is not meant to replace the STL vector library, its simply a project
-//       to introduce the beginnings of creating complex / abstract data types. 
-//       
-// Usage: 
-//      - $ ./main filename
-//      - This will read in a file containing whatever values to be read into our list/array. 
-//      
-// Files:            
-//      main.cpp    : driver program 
-//      list.h      : header file with list defintion
-//      list.cpp    : list implementation
-////////////////////////////////////////////////////////////////////////////////
-
 #include <iostream>
 
 using namespace std;
@@ -34,10 +6,25 @@ using namespace std;
 class CircularArrayQue {
 private:
     int *Container;
-    int Front;
-    int Rear;
-    int QueSize; // items in the queue
-    int CurrentSize;
+    int Front;            // first item in queue
+    int Rear;             // last item in queue
+    int QueSize;          // items in the queue
+    int CurrentSize;      // actual number of items currently in queue
+
+    /**
+     * Private : init
+     *
+     * Description:
+     *      As new array is created, Front, Rear, and CurrentSize
+     *      are set to 0 and QueSize is set to 0 (default constructor)
+     *      or to the passed in int (non-default constructor)
+     *
+     * Params:
+     *      int     :  array size
+     *
+     * Returns:
+     *      Void, therefore returns nothing.
+     */
     void init(int size = 0) {
         Front = Rear = CurrentSize = 0;
         QueSize = size;
@@ -45,18 +32,35 @@ private:
 
     bool Full() {
         return CurrentSize == QueSize;
-    }
+    }       // returns a bool depending on wether array is full or not
 
 public:
-    CircularArrayQue() {
+    CircularArrayQue() {  // default constructor, size of array is 10
         Container = new int[10];
         init(10);
     }
     CircularArrayQue(int size) {
         Container = new int[size];
-        init(size);
+        init(size);       // non-default constructor, size of array is set with parameter
     }
 
+
+    /**
+     * Public : Push
+     *
+     * Description:
+     *      Puts passed-in-item in the array at spot Read, which is
+     *      0 (if array empty) or next empty spot after an item.
+     *      Increments Rear by 1 to move end of array, and increments
+     *      CurrentSize by 1.
+     *      If array is full, nothing changes except error messages is displayed
+     *
+     * Params:
+     *      int     :  item to be pushed in array
+     *
+     * Returns:
+     *      Void, therefore returns nothing.
+     */
     void Push(int item) {
         if (!Full()) {
             Container[Rear] = item;
@@ -67,6 +71,21 @@ public:
         }
     }
 
+
+    /**
+     * Public : Pop
+     *
+     * Description:
+     *      Returns item at spot Front. From left to right the first item
+     *      in the array. Then increments Front by 1 and decrements
+     *      CurrentSize by 1.
+     * Params:
+     *      No parameter.
+     *
+     * Returns:
+     *      Int temp: number to be popped out of array.
+     */
+
     int Pop() {
         int temp = Container[Front];
         Front = (Front + 1) % QueSize;
@@ -74,6 +93,29 @@ public:
         return temp;
     }
     friend ostream &operator<<(ostream &os, const CircularArrayQue &other);
+
+
+
+    /**
+     * Public : printQ
+     *
+     * Description:
+     *      Prints out Array.
+     * Params:
+     *      No parameter.
+     *
+     * Returns:
+     *      Void, therefore returns nothing.
+     */
+    void printQ()
+    {
+      int n = 0;
+      while (n < QueSize)
+      {
+        cout << Container[n];
+        n++;
+      }
+    }
 };
 
 ostream &operator<<(ostream &os, const CircularArrayQue &other) {
@@ -87,9 +129,9 @@ ostream &operator<<(ostream &os, const CircularArrayQue &other) {
 
 /**
  * Main Driver
- * 
+ *
  * For this program, the main driver was used to test the CircularArrayQue class
- * 
+ *
  */
 int main() {
     CircularArrayQue C1(5);
@@ -104,13 +146,14 @@ int main() {
     C1.Push(1);
     C1.Push(2);
     C1.Push(3);
-    // C1.Push(6);
-    // C1.Push(7);
-    cout << C1 << endl;
 
-    // C1.Push(1);
-    // C1.Push(2);
-    // C1.Push(3);
+    C1.Push(4);
+    C1.Push(5);
 
-    cout << C1 << endl;
+    C1.printQ();
+
+    cout << C1.Pop() << C1.Pop() << C1.Pop() << C1.Pop() << C1.Pop() << endl;
+
+    // Test Test
+
 }
