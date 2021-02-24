@@ -1,3 +1,27 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// Author:           Linus Fackler
+// Email:            linus.fackler@iCloud.com
+// Label:            A03
+// Title:            Linked List Class
+// Course:           CMPS 3013
+// Semester:         Spring 2021
+//
+// Description:
+//       This program creates a queue used as an array that allows the user to push
+//       items to the rear/end of the list and pop (return) items from the beginning of
+//       the list. As long as the array is not full, it can always push and pop items,
+//       as there is an integer traversing from the front, to the rear of the list, and
+//       then back to the front and the same thing again.
+//
+//
+// Usage:
+//      - Will read in items through the console.
+//
+// Files:
+//      main.cpp    : driver program
+/////////////////////////////////////////////////////////////////////////////////
+
 #include <iostream>
 
 using namespace std;
@@ -151,8 +175,6 @@ int main() {
     C1.Push(5);
 
     C1.printQ();
-
-    cout << C1.Pop() << C1.Pop() << C1.Pop() << C1.Pop() << C1.Pop() << endl;
 
     // Test Test
 
