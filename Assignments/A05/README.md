@@ -15,7 +15,7 @@
 
 #### Attributes / Properties
 
-> Def
+> Attributes is data that is stored inside a class
 
 #### Class
 
