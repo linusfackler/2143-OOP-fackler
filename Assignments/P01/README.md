@@ -7,5 +7,5 @@ If he hits a rectangle, he loses a point. The game ends once he lost all points.
 
 
 ### Files
-- [test.cpp](test.cpp) 
-- [screenshot.png](screenshot.PNG)
+- [main.cpp](main.cpp) 
+- [Player.h](Player.h)
