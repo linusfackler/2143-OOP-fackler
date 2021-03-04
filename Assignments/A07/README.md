@@ -19,4 +19,4 @@
 
 ### Diagram
 
-<img src="https://i.imgur.com/vwMktnH.png" width=200>
+<img src="https://i.imgur.com/vwMktnH.png" width=400>
