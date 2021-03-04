@@ -17,8 +17,8 @@ class Player: public sf::Drawable
 
         /**
          * Description:
-         *      Honestly no idea what it does
-         *      Is a constant
+         *      a constant virtual method to make the sfml draw function simpler
+         *      where you pass in a RenderTarget and RenderStates object
          * Params:
          *      sf::RenderTarget address
          *      sf::RenderStates states
@@ -74,9 +74,9 @@ class Player: public sf::Drawable
 
             if (dir == 'u')
             {
-                if (position.y < size) // if the distance to the border
+                if (position.y < size+50) // if the distance to the border
                 {                      // is less than 50, just puts to 0
-                    circle->setPosition(sf::Vector2f(position.x, 0));
+                    circle->setPosition(sf::Vector2f(position.x, 50));
                     // even if y - 50 is less than 0, it puts it to 0
                     // so it's not half out of the window                    
                 }
