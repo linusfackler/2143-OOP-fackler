@@ -19,8 +19,8 @@ class Debris: public sf::Drawable
 
         /**
          * Description:
-         *      Honestly no idea what it does (part 2)
-         *      Is a constant
+         *      a constant virtual method to make the sfml draw function simpler
+         *      where you pass in a RenderTarget and RenderStates object
          * Params:
          *      sf::RenderTarget address
          *      sf::RenderStates states
