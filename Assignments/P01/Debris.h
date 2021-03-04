@@ -46,10 +46,10 @@ class Debris: public sf::Drawable
 
             d = -0.2;           // starting speed is 0.2 left (-)
 
-            sizex = (rand() % (width / 4) + 50);
+            sizex = (rand() % (width/10) + 10);
                 // size hor. debris random (min = 50; max = width/4)
-            sizey = (rand() % (height / 2) + 100);
-                // size vert. debris random (min = 100; max = width/2)
+            sizey = (rand() % (height / 2) + 200);
+                // size vert. debris random (min = 100; max = height/2)
 
             rect = new sf::RectangleShape(sf::Vector2f(sizex, sizey));
                 // pointer rect is new Rectangle shaped object
@@ -137,9 +137,9 @@ class Debris: public sf::Drawable
         void update()
         {
             position = rect->getPosition();
-
             x = position.x + d;
             rect->setPosition(sf::Vector2f(x, y));
+
         }
 
         /**
