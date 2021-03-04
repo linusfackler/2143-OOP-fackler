@@ -1,4 +1,4 @@
-## SFML Intro 
+## Assignment 6 - SFML Intro 
 
 This is the "hello world" of SFML game programming. 
 
