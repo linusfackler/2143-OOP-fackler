@@ -96,14 +96,24 @@ int main()
     Debris **Zarray = new Debris *[50];
         // second array pointer object "Zarry" (Z for zecond) from class "Debris"
 
+    Debris **Yarray = new Debris *[50];
+        // thrid array pointer object "Yarry" (Y for thYrd) from class "Debris"
+
+
+
     int i = 0;      // local counter variables for different Debris
-    int w = 1;
+    int z = 1;
+    int y = 1;
+    int l = 1;
 
     Darray[i] = new Debris(window_width, window_height, 0, 145, 51, 0);
         // first Debris object gets created before window is opened
         // because the rest are created once the one before goes out
         // of bounds or gets hit
-    Zarray[w] = new Debris(window_width, window_height, 0, 145, 51, 1000);
+    Zarray[z] = new Debris(window_width, window_height, 0, 145, 51, 1000);
+
+    Yarray[y] = new Debris(window_width, window_height, 0, 145, 51, 10000);
+
 
     std::string points;
         // string for our point counter
@@ -123,7 +133,9 @@ int main()
         sf::FloatRect rec2 = Darray[i]->getBounds();
             // creating Rectangle to size of bounds of Debris
 
-        sf::FloatRect rec3 = Zarray[w] ->getBounds();
+        sf::FloatRect rec3 = Zarray[z] ->getBounds();
+
+        sf::FloatRect rec4 = Yarray[y] ->getBounds();
 
         points = "Score : " + std::to_string(scores.getScore());
             // setting string for scoreboard with actual score
@@ -177,8 +189,6 @@ int main()
             i++;  // counter gets incremented
             Darray[i] = new Debris(window_width, window_height, 0, 145, 51, 0);
                   // next Debris gets created
-            Darray[i]->changeSpeed(-0.2f - (i * 0.025));
-                  // speed increases by 0.025
 
             scores.minusScore();
                   // Player loses 1 point
@@ -186,56 +196,80 @@ int main()
 
         if (rec1.intersects(rec3))
         {         // if 2 floating rectangles (Player & Debris) intersect
-            w++;    // counter gets incremented
+            z++;    // counter gets incremented
 
-            Zarray[w] = new Debris(window_width, window_height, 0, 145, 51, 250);
+            Zarray[z] = new Debris(window_width, window_height, 0, 145, 51, 0);
                   // next Debris gets created
 
-            Zarray[w]->changeSpeed(-0.2f - (i * 0.025));
-                  // speed increases by 0.025
             scores.minusScore();
                   // Player loses 1 point
         }
 
+        if (rec1.intersects(rec4))
+        {         // if 2 floating rectangles (Player & Debris) intersect
+            y++;    // counter gets incremented
+            Yarray[y] = new Debris(window_width, window_height, 0, 145, 51, 0);
+                  // next Debris gets created
+
+            scores.minusScore();
+                  // Player loses 1 point
+        }
+
+
+
+
         if (Darray[i]->getX() <= -(Darray[i]->getSizex()))
         {         // if Debris leaves the window on the left side
 
-            i++;  // i cets incremented
+            i++;  // counter cets incremented
             Darray[i] = new Debris(window_width, window_height, 0, 145, 51, 0);
                   // next Debris gets created
 
-            Darray[i]->changeSpeed(-0.2f - (i * 0.025));
-                  // speed increases by 0.025
-
             scores.plusScore();
                   // Player gains 1 point
         }
 
-        if (Zarray[w]->getX() <= -(Zarray[w]->getSizex()))
+        if (Zarray[z]->getX() <= -(Zarray[z]->getSizex()))
         {         // if Debris leaves the window on the left side
             
-            w++;  // i cets incremented
+            z++;  // counter cets incremented
 
-            Zarray[w] = new Debris(window_width, window_height, 0, 145, 51, 250);
+            Zarray[z] = new Debris(window_width, window_height, 0, 145, 51, 0);
                   // next Debris gets created
-
-            Zarray[w]->changeSpeed(-0.2f - (i * 0.025));
-                  // speed increases by 0.025
 
             scores.plusScore();
                   // Player gains 1 point
         }
+
+        if (Yarray[y]->getX() <= -(Yarray[y]->getSizex()))
+        {         // if Debris leaves the window on the left side
+            
+            y++;  // counter cets incremented
+
+            Yarray[y] = new Debris(window_width, window_height, 0, 145, 51, 0);
+                  // next Debris gets created
+
+            scores.plusScore();
+                  // Player gains 1 point
+        }
+
+
 
 
         Darray[i]->update();        // Debris positions gets updated constantly
-        Zarray[w]->update();
+        Zarray[z]->update();
+        Yarray[y]->update();
+        Zarray[z]->changeSpeed(-0.2f - (i * 0.025));
+        Darray[i]->changeSpeed(-0.2f - (i * 0.025));
+        Yarray[y]->changeSpeed(-0.2f - (i * 0.025));
 
         window.clear();             // window gets cleared
         window.draw(spriteBg1);     // moving bg gets drawn
         window.draw(spriteBg2);
         window.draw(scoreText);     // text gets drawn
         window.draw(*Darray[i]);    // Debris number i gets drawn
-        window.draw(*Zarray[w]);    // Debris number w gets drawn
+        window.draw(*Zarray[z]);    // Debris number z gets drawn
+        window.draw(*Yarray[y]);    // Debris number y gets drawn
         window.draw(*bird);         // bird (Player) gets drawn
     
         if (scores.getScore() < 0)  // if score hits -1
