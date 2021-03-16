@@ -23,4 +23,4 @@ as well as print them.
 ### Example Command
 
 - g++ main.cpp -o main
-  main
+-  main
