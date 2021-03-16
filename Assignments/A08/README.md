@@ -12,7 +12,7 @@ as well as print them.
 |   #   | File     | Description                      |
 | :---: | -------- | -------------------------------- |
 |   1   | <a href="https://github.com/linusfackler/2143-OOP-fackler/blob/main/Assignments/A08/banner.txt">banner.txt</a> | My banner as txt file |
-|   2   | <a href="https://github.com/linusfackler/2143-OOP-fackler/blob/main/Assignments/A08/main.cpp">banner.txt</a> | Main file to run program |
+|   2   | <a href="https://github.com/linusfackler/2143-OOP-fackler/blob/main/Assignments/A08/main.cpp">main.cpp</a> | Main file to run program |
 
 
 
