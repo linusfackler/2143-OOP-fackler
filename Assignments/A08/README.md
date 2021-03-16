@@ -2,13 +2,18 @@
 ### Linus Fackler
 ### Description:
 
-An extended class with a copy constructor.
+In this program I rewrote the original code with an existing RgbColor
+class so there is a ColorPalette that can store multiple instances
+of RgbColor with a Vector. It has methods to add Colors to the vector,
+as well as print them.
 
 ### Files
 
 |   #   | File     | Description                      |
 | :---: | -------- | -------------------------------- |
 |   1   | <a href="https://github.com/linusfackler/2143-OOP-fackler/blob/main/Assignments/A08/banner.txt">banner.txt</a> | My banner as txt file |
+|   2   | <a href="https://github.com/linusfackler/2143-OOP-fackler/blob/main/Assignments/A08/main.cpp">banner.txt</a> | Main file to run program |
+
 
 
 ### Instructions
@@ -17,4 +22,5 @@ An extended class with a copy constructor.
 
 ### Example Command
 
-- None for now.
+- g++ main.cpp -o main
+  main
