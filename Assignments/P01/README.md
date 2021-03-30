@@ -28,5 +28,3 @@ If he hits a rectangle, he loses a point. The game ends once he lost all points.
 
 - make
 - make run
-
-## DONE
